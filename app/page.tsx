@@ -78,8 +78,6 @@ export default function HomePage() {
           <Image src="/runforge_logo.png" alt="RunForge" width={100} height={32} className="object-contain" />
           <p className="text-xs text-slate-500">© {new Date().getFullYear()} RunForge. All rights reserved.</p>
           <div className="flex gap-4 text-xs text-slate-500">
-            <a href="https://forgedrop.runforge.ca/privacy" className="hover:text-slate-300 transition-colors">Privacy</a>
-            <a href="https://forgedrop.runforge.ca/terms" className="hover:text-slate-300 transition-colors">Terms</a>
             <a href="mailto:support@runforge.ca" className="hover:text-slate-300 transition-colors">Contact</a>
           </div>
         </div>

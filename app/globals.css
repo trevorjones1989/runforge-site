@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #06091a;
-  --foreground: #e8eaf6;
-  --accent: #f97316;
+  --background: #0f172a;   /* slate-900 — lighter than the old near-black */
+  --foreground: #f1f5f9;   /* slate-100 */
+  --accent: #f97316;       /* RunForge orange */
   --accent-dark: #ea6c0a;
-  --muted: #1e2540;
-  --border: #1e2d4a;
+  --muted: #1e293b;        /* slate-800 */
+  --border: #334155;       /* slate-700 — more visible borders */
 }
 
 @theme inline {

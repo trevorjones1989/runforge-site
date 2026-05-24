@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f172a;   /* slate-900 — lighter than the old near-black */
-  --foreground: #f1f5f9;   /* slate-100 */
-  --accent: #f97316;       /* RunForge orange */
-  --accent-dark: #ea6c0a;
-  --muted: #1e293b;        /* slate-800 */
-  --border: #334155;       /* slate-700 — more visible borders */
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  --accent: #4f8ef7;
+  --accent-dark: #2563eb;
+  --muted: #1e293b;
+  --border: #334155;
 }
 
 @theme inline {
@@ -23,14 +23,14 @@ body {
 }
 
 .gradient-hero {
-  background: radial-gradient(ellipse at 60% 0%, rgba(249, 115, 22, 0.1) 0%, transparent 60%),
-              radial-gradient(ellipse at 20% 80%, rgba(234, 108, 10, 0.06) 0%, transparent 50%);
+  background: radial-gradient(ellipse at 60% 0%, rgba(79, 142, 247, 0.12) 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
 }
 
 .card-glow {
-  box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.12), 0 4px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 1px rgba(79, 142, 247, 0.12), 0 4px 24px rgba(0, 0, 0, 0.3);
 }
 
 .card-glow:hover {
-  box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.35), 0 8px 32px rgba(249, 115, 22, 0.08);
+  box-shadow: 0 0 0 1px rgba(79, 142, 247, 0.35), 0 8px 32px rgba(79, 142, 247, 0.08);
 }

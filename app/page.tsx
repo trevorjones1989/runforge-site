@@ -18,7 +18,7 @@ export default function HomePage() {
       </nav>
 
       {/* Hero */}
-      <div className="flex-1 flex flex-col items-center justify-center px-6 py-24 text-center">
+      <div className="gradient-hero flex-1 flex flex-col items-center justify-center px-6 py-24 text-center">
         <p className="text-sm font-semibold tracking-widest uppercase mb-4" style={{ color: "var(--accent)" }}>
           RunForge
         </p>
@@ -37,12 +37,8 @@ export default function HomePage() {
             {/* ForgeDrop card */}
             <a
               href="https://forgedrop.runforge.ca"
-              className="group block rounded-2xl p-6 text-left transition-all hover:scale-[1.02]"
-              style={{
-                background: "var(--muted)",
-                border: "1px solid var(--border)",
-                boxShadow: "0 4px 24px rgba(0,0,0,0.4)",
-              }}
+              className="card-glow group block rounded-2xl p-6 text-left transition-all hover:scale-[1.02]"
+              style={{ background: "var(--muted)" }}
             >
               <div className="flex items-center gap-4 mb-4">
                 <Image

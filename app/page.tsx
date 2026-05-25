@@ -6,8 +6,8 @@ export default function HomePage() {
 
       {/* Nav */}
       <nav className="border-b px-6 py-4" style={{ borderColor: "var(--border)" }}>
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <Image src="/runforge_logo.png" alt="RunForge" width={140} height={48} className="object-contain" priority />
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          <Image src="/runforge_logo.png" alt="RunForge" width={180} height={48} className="object-contain" priority />
           <a
             href="mailto:support@runforge.ca"
             className="text-sm text-slate-400 hover:text-white transition-colors"
@@ -70,8 +70,8 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="border-t px-6 py-8" style={{ borderColor: "var(--border)" }}>
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <Image src="/runforge_logo.png" alt="RunForge" width={100} height={36} className="object-contain" />
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <Image src="/runforge_logo.png" alt="RunForge" width={120} height={36} className="object-contain" />
           <p className="text-xs text-slate-500">© {new Date().getFullYear()} RunForge. All rights reserved.</p>
           <div className="flex gap-4 text-xs text-slate-500">
             <a href="mailto:support@runforge.ca" className="hover:text-slate-300 transition-colors">Contact</a>

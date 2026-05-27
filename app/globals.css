@@ -34,3 +34,18 @@ body {
 .card-glow:hover {
   box-shadow: 0 0 0 1px rgba(79, 142, 247, 0.35), 0 8px 32px rgba(79, 142, 247, 0.08);
 }
+
+/* ── Blog article styles ─────────────────────────────────────────────────────── */
+.prose-article .md-h2 { font-size: 1.35rem; font-weight: 700; color: #f1f5f9; margin: 2.2rem 0 0.75rem; }
+.prose-article .md-h1 { font-size: 1.6rem; font-weight: 700; color: #f1f5f9; margin: 2rem 0 0.75rem; }
+.prose-article .md-p  { color: #94a3b8; line-height: 1.8; margin: 0 0 0.25rem; }
+.prose-article .md-li { color: #94a3b8; line-height: 1.8; margin-left: 1.25rem; list-style-type: disc; }
+.prose-article .md-link { color: #4f8ef7; text-decoration: underline; text-underline-offset: 3px; }
+.prose-article .md-link:hover { color: #93c5fd; }
+.prose-article .md-pre { background: #020617; border: 1px solid #1e293b; border-radius: 10px; padding: 1rem 1.25rem; overflow-x: auto; margin: 1rem 0; }
+.prose-article .md-pre code { color: #93c5fd; font-size: 0.85rem; font-family: var(--font-geist-mono), monospace; }
+.prose-article code { background: #1e293b; color: #93c5fd; padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.875em; font-family: var(--font-geist-mono), monospace; }
+.prose-article .md-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+.prose-article .md-table th { text-align: left; padding: 0.6rem 1rem; background: #1e293b; color: #e2e8f0; font-weight: 600; border-bottom: 1px solid #334155; }
+.prose-article .md-table td { padding: 0.6rem 1rem; color: #94a3b8; border-bottom: 1px solid #1e293b; }
+.prose-article strong { color: #e2e8f0; }

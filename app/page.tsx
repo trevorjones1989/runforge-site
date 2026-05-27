@@ -10,12 +10,10 @@ export default function HomePage() {
           <div className="bg-white rounded-xl px-3 py-1.5">
             <Image src="/runforge_logo.png" alt="RunForge" width={160} height={32} className="object-contain" style={{ height: '32px', width: 'auto' }} priority />
           </div>
-          <a
-            href="mailto:support@runforge.ca"
-            className="text-sm text-slate-400 hover:text-white transition-colors"
-          >
-            Contact
-          </a>
+          <div className="flex items-center gap-6">
+            <a href="/blog" className="text-sm text-slate-400 hover:text-white transition-colors">Blog</a>
+            <a href="mailto:support@runforge.ca" className="text-sm text-slate-400 hover:text-white transition-colors">Contact</a>
+          </div>
         </div>
       </nav>
 

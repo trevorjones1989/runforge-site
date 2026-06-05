@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { posts, getPost } from "../posts";
 
@@ -103,8 +104,10 @@ export default async function PostPage({
       {/* Nav */}
       <nav className="border-b px-6 py-4" style={{ borderColor: "var(--border)" }}>
         <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-white font-bold text-lg hover:opacity-80 transition-opacity">
-            RunForge
+          <Link href="/" className="hover:opacity-80 transition-opacity">
+            <div className="bg-white rounded-xl px-3 py-1.5">
+              <Image src="/runforge_logo.png" alt="RunForge" width={120} height={28} className="object-contain" style={{ height: '28px', width: 'auto' }} priority />
+            </div>
           </Link>
           <div className="flex items-center gap-6 text-sm text-slate-400">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>

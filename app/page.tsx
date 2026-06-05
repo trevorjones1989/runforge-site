@@ -32,7 +32,7 @@ export default function HomePage() {
         {/* Products */}
         <div className="w-full max-w-4xl">
           <p className="text-xs font-semibold tracking-widest uppercase text-slate-500 mb-6">Our Products</p>
-          <div className="grid sm:grid-cols-1 max-w-sm mx-auto gap-6">
+          <div className="grid sm:grid-cols-2 gap-6">
 
             {/* ForgeDrop card */}
             <a
@@ -55,6 +55,36 @@ export default function HomePage() {
               </div>
               <p className="text-slate-400 text-sm leading-relaxed mb-4">
                 Watch folders on any server and trigger webhooks, emails, scripts, database writes, and more the moment a file changes. Free to start, no cloud required.
+              </p>
+              <span
+                className="inline-flex items-center gap-1 text-sm font-medium transition-colors"
+                style={{ color: "var(--accent)" }}
+              >
+                Learn more →
+              </span>
+            </a>
+
+            {/* DocForge card */}
+            <a
+              href="https://docforge.runforge.ca"
+              className="card-glow group block rounded-2xl p-6 text-left transition-all hover:scale-[1.02]"
+              style={{ background: "var(--muted)" }}
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <Image
+                  src="/docforge_icon.png"
+                  alt="DocForge"
+                  width={48}
+                  height={48}
+                  className="object-cover rounded-xl"
+                />
+                <div>
+                  <div className="text-white font-bold text-lg">DocForge</div>
+                  <div className="text-xs text-slate-500">RPA document generation</div>
+                </div>
+              </div>
+              <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                Turn meeting transcripts and process notes into complete PDDs, SDDs, UAT Test Plans, and SOPs in seconds. Bring your own AI model — your data never leaves your machine.
               </p>
               <span
                 className="inline-flex items-center gap-1 text-sm font-medium transition-colors"

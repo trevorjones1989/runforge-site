@@ -265,6 +265,253 @@ Two folders, three rules, all action types — free forever.
 [Download ForgeDrop free →](https://forgedrop.runforge.ca)
     `.trim(),
   },
+  {
+    slug: 'rpa-documentation-ai-generated',
+    title: 'How to Generate RPA Documentation Automatically with AI',
+    description: 'Writing PDDs, SDDs, and UAT Test Plans for RPA projects takes days. Here\'s how AI generation from meeting transcripts cuts that to minutes — without losing quality.',
+    date: '2026-06-01',
+    readingMins: 6,
+    content: `
+## The Documentation Bottleneck in RPA Projects
+
+Every UiPath or Power Automate project needs the same set of documents before go-live: a Process Definition Document, a Solution Design Document, a UAT Test Plan, and a Standard Operating Procedure. Collectively, they can take a senior Business Analyst three to five days to write — and that's assuming the process is already well-understood.
+
+Most of that time is not thinking time. It's formatting time: laying out tables, filling in boilerplate sections, cross-referencing field names between documents, reformatting notes from the process walkthrough into the correct structure.
+
+AI generation changes that equation completely.
+
+## What AI-Generated RPA Docs Actually Look Like
+
+A well-structured prompt, given the right context, can produce a complete PDD in the correct format in under a minute. The output includes:
+
+- **Executive summary** with process scope, in-scope/out-of-scope items, and business case
+- **As-Is process walkthrough** with steps, decision points, and exception paths
+- **To-Be process design** with the automation overlay mapped to each step
+- **Business rules and exception handling** table
+- **KPIs and success metrics** section
+- **Appendix** with data fields, system access requirements, and assumptions
+
+When the input is a meeting transcript or a set of process notes, the model extracts the relevant information and maps it to the document structure — you don't need to do that mapping manually.
+
+## The Input: What You Give It
+
+The source material can be:
+
+- A meeting transcript from a process walkthrough session
+- Bullet-point notes from a discovery call
+- An existing (poorly formatted) Word document
+- A mix of all three
+
+You don't need to pre-format the input or structure it in any particular way. The model is instructed to extract intent, not rely on structure.
+
+## The Output: Ready to Export
+
+[DocForge](https://docforge.runforge.ca) generates the document directly from your input and exports it to DOCX — either with the built-in template or your organisation's branded Word template. The exported file is ready to hand to a client or upload to SharePoint. No post-processing required.
+
+## Bring Your Own Model
+
+DocForge connects to any OpenAI-compatible endpoint. That means:
+
+- **OpenAI** (GPT-4o, GPT-4.1)
+- **Azure OpenAI** — use your organisation's existing agreement, keeping data inside your tenant
+- **Anthropic** (Claude)
+- **Groq** (fast, cheap inference)
+- **Ollama or LM Studio** — fully local, no internet, no data leaves your machine
+
+No DocForge subscription involves any AI costs. You pay for your own model usage directly — typically less than $0.10 per document with GPT-4o-mini.
+
+## The Four Documents DocForge Generates
+
+| Document | What it covers |
+|---|---|
+| **PDD** | Scope, as-is/to-be process, business rules, exceptions, KPIs |
+| **SDD** | REFramework architecture, Orchestrator assets, package design, component breakdown |
+| **UAT Test Plan** | Happy path, business exception, application exception, and retry test cases |
+| **SOP** | Setup, daily monitoring, exception handling guide for operations staff |
+
+## Who It's For
+
+DocForge is built specifically for RPA consultants, Business Analysts, and delivery leads who produce this documentation regularly. It's not a generic AI writing tool — the prompts are written by practitioners who know what a PDD actually needs to contain.
+
+## Try It Free
+
+DocForge is free to start — two projects, five generations, PDD included. No account required, no credit card.
+
+[Download DocForge free →](https://docforge.runforge.ca)
+    `.trim(),
+  },
+
+  {
+    slug: 'pdd-template-uipath-what-to-include',
+    title: 'What to Include in a UiPath PDD (Process Definition Document)',
+    description: 'A practical guide to every section of a UiPath PDD — what goes in it, why it matters, and how to fill it out without starting from a blank page.',
+    date: '2026-06-03',
+    readingMins: 7,
+    content: `
+## What Is a PDD?
+
+A Process Definition Document (PDD) is the foundational document for any RPA project. It defines the process being automated in enough detail that a developer can build a solution without needing to re-interview the business — and enough clarity that a client can sign off on what's in and out of scope before a single line of code is written.
+
+A PDD written well prevents scope creep, misaligned expectations, and UAT failures. A PDD written badly (or skipped entirely) is usually why RPA projects go over budget.
+
+## The Standard Sections
+
+### 1. Document Control
+
+Version number, author, date, review status. Straightforward, but important for audit trails. Always include a change log table.
+
+### 2. Executive Summary
+
+A one-page overview that a non-technical stakeholder can read and understand. Cover:
+
+- **What the process does** in plain English
+- **Why it's being automated** (business case, time saving, error reduction)
+- **What's in scope** and — just as important — **what's out of scope**
+- **Target go-live date** and delivery approach
+
+Keep it to half a page if possible.
+
+### 3. Process Overview
+
+- **Process name** and business unit owner
+- **Frequency** — how often does this process run? (daily, on-demand, event-triggered?)
+- **Volume** — how many transactions per run? Per month?
+- **SLA** — how quickly does the output need to be available?
+- **Current effort** — how many FTEs, how many hours per week?
+- **Systems involved** — list every application the bot will interact with
+
+### 4. As-Is Process Walkthrough
+
+A step-by-step description of how a human performs the process today. Be specific. Vague steps like "the analyst processes the file" are not useful. Write it at the level of: "The analyst opens [Application X], navigates to [Screen Y], enters [Field Z] from the spreadsheet, clicks Submit."
+
+Include:
+- Decision points (if/else branches)
+- Exception paths (what happens when the data is missing, the system is down, the file is malformed)
+- Manual checks the human performs that the bot will need to replicate
+
+### 5. To-Be Process Design
+
+The same walkthrough, but with the automation overlay applied. Highlight where the bot takes over, where humans remain in the loop, and how exceptions will be handled in code (system exception vs. business exception split).
+
+### 6. Business Rules
+
+A dedicated table for every rule the process must follow. Examples:
+
+| Rule | Description |
+|---|---|
+| BR-001 | Only process invoices where Amount > $0 |
+| BR-002 | Skip records where Status = "Cancelled" |
+| BR-003 | Flag for human review if vendor code not found in master list |
+
+Business rules belong here, not buried in the process walkthrough.
+
+### 7. Exception Handling
+
+Split into:
+- **Business exceptions** — data issues, records that don't meet rules. The bot flags these and moves on.
+- **Application exceptions** — system errors, timeouts, unexpected UI states. The bot retries and escalates.
+
+For each exception type, document: what triggers it, what the bot does, who gets notified.
+
+### 8. Data Fields
+
+A table of every input field the bot reads, and every output field it writes. Include source system, field name, data type, and whether it's mandatory.
+
+### 9. Assumptions and Dependencies
+
+Everything the delivery team is assuming to be true — and what dependencies must be in place for go-live. Examples: "We assume the test environment is stable," "The vendor API key will be provided by [date]," "The process will not change during development."
+
+### 10. KPIs and Success Metrics
+
+How will you measure whether the automation succeeded? At minimum:
+- **Processing time per transaction** (before vs. after)
+- **Error rate** (before vs. after)
+- **FTE hours saved per month**
+
+### 11. Appendix
+
+Any reference material that doesn't fit above: example screenshots, data sample, glossary of business terms.
+
+## How Long Should a PDD Be?
+
+For a simple, single-exception process: 8–12 pages. For a complex multi-path process: 15–25 pages. Anything shorter is probably missing the exception handling. Anything longer is probably duplicating itself.
+
+## Generating a PDD with DocForge
+
+[DocForge](https://docforge.runforge.ca) produces all of the above sections from a meeting transcript or process notes. The output follows the structure described here — formatted, ready to review, and exportable to DOCX in your own Word template.
+
+[Download DocForge free →](https://docforge.runforge.ca)
+    `.trim(),
+  },
+
+  {
+    slug: 'byom-rpa-documentation-data-privacy',
+    title: 'Why "Bring Your Own Model" Matters for RPA Documentation',
+    description: 'When your RPA documents contain sensitive process data, you need to control where that data goes. Here\'s why BYOM AI tools are the right choice for enterprise automation teams.',
+    date: '2026-06-05',
+    readingMins: 5,
+    content: `
+## The Data Privacy Problem with AI Writing Tools
+
+Most AI-assisted writing tools work the same way: you paste your content in, it goes to a cloud server, the model generates a response, and you get the output back. Simple. But for enterprise RPA teams, that model has a serious problem.
+
+Your PDDs, SDDs, and process notes contain:
+
+- Internal system names and architecture details
+- Business process logic that may be commercially sensitive
+- Employee names and roles
+- Customer-facing processes with compliance implications
+- Sometimes: data samples and field values from production systems
+
+Pasting any of this into a consumer AI tool likely violates your organisation's data handling policies, your client's NDA, or both.
+
+## The Bring Your Own Model Approach
+
+BYOM (Bring Your Own Model) means the AI tool connects to a model endpoint that you control — rather than a shared cloud service. The tool handles the document structure, the prompts, and the output formatting. You supply the model.
+
+In practice, this means:
+
+**Azure OpenAI** — if your organisation already has an Azure OpenAI agreement, data stays within your Azure tenant. The same Microsoft enterprise data protection you already have applies. No data leaves your existing boundary.
+
+**Ollama or LM Studio** — run a model entirely on your own machine. The data never leaves your network at all, even in transit. GPT-4 level quality is available locally on modern hardware (Llama 3.3, Mistral, Phi-4).
+
+**Your own OpenAI or Anthropic key** — data goes to OpenAI or Anthropic under your API agreement, not through a third-party SaaS vendor's shared account.
+
+## Why This Matters More Than You Think
+
+When you use a SaaS AI writing tool, you are trusting:
+
+1. That the SaaS vendor doesn't log your prompts
+2. That the SaaS vendor doesn't use your data for model training
+3. That the SaaS vendor's security posture is adequate
+4. That their data processing agreement covers your use case
+
+With BYOM, you remove that dependency entirely. Your data goes where you already decided it's allowed to go.
+
+## What DocForge Does
+
+[DocForge](https://docforge.runforge.ca) is a desktop application — it runs on your machine, not in a browser tab backed by a cloud server. You configure your own AI endpoint in Settings:
+
+- Your own OpenAI API key → data goes to OpenAI under your agreement
+- Azure OpenAI endpoint + key → data stays in your tenant
+- Ollama running locally → data never leaves your machine
+- Any OpenAI-compatible endpoint → works out of the box
+
+DocForge itself never sees your content. It connects directly from your machine to the model endpoint you specify.
+
+## The Cost Advantage
+
+As a side effect, BYOM is also significantly cheaper than SaaS AI tools. GPT-4o-mini costs roughly $0.15 per million input tokens. A full PDD generation — even with a detailed transcript — typically uses 2,000–4,000 tokens. That's less than $0.001 per document.
+
+Compare that to AI writing tool subscriptions at $20–$50/month, and the economics are clear — especially if you're generating dozens of documents per month across a delivery team.
+
+## Enterprise-Ready From Day One
+
+DocForge was built for RPA consultants who work with enterprise clients. Data privacy isn't an afterthought — it's the architecture. BYOM means you can use DocForge with confidence in any environment, from a regulated financial services client to a healthcare provider with strict data residency requirements.
+
+[Download DocForge free →](https://docforge.runforge.ca)
+    `.trim(),
+  },
 ]
 
 export function getPost(slug: string): Post | undefined {

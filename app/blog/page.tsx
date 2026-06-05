@@ -22,10 +22,17 @@ export default function BlogPage() {
             <Link href="/blog" className="text-white font-medium">Blog</Link>
             <Link
               href="https://forgedrop.runforge.ca"
-              className="px-4 py-2 rounded-lg text-white font-medium transition-colors"
+              className="text-sm px-3 py-2 rounded-lg text-white font-medium transition-colors"
               style={{ background: "var(--accent-dark)" }}
             >
               ForgeDrop
+            </Link>
+            <Link
+              href="https://docforge.runforge.ca"
+              className="text-sm px-3 py-2 rounded-lg text-white font-medium transition-colors"
+              style={{ background: "var(--accent-dark)" }}
+            >
+              DocForge
             </Link>
           </div>
         </div>
